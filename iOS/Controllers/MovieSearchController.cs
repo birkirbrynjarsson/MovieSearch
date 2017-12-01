@@ -72,9 +72,7 @@ namespace MovieSearch.iOS.Controllers
                 var searchInput = searchField.Text;
                 _activityIndicator.StartAnimating();
                 searchField.ResignFirstResponder();
-                if(searchInput != ""){
-                    _movieList = await _movieService.GetMoviesByTitle(searchInput);
-                }
+                _movieList = await _movieService.GetMoviesByTitle(searchInput);
                 _activityIndicator.StopAnimating();
                 this.NavigationController.PushViewController(new MovieListController(this._movieService, this._imageDownloader), true);
             };

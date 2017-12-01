@@ -9,5 +9,9 @@ namespace MovieSearch.Services
     {
         Task<List<MovieListViewModel>> GetMoviesByTitle(string title);
         List<MovieListViewModel> GetMovieList();
+        Task GetCastInList(List<MovieListViewModel> movies);
+        Task<List<String>> GetCastByMovieId(int id);
+        MovieDetailsViewModel GetDetailsFromListView(MovieListViewModel movie);
+        Task<MovieDetailsViewModel> GetMovieById(int id);
     }
 }

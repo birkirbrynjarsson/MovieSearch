@@ -123,6 +123,6 @@
     <Compile Include="Controllers\TabBarController.cs" />
     <Compile Include="Controllers\MovieDetailController.cs" />
   </ItemGroup>
-  <Import Project="..\..\2017-T-488-MAPP\Projects\MovieDownload\MovieDownload.projitems" Label="Shared" Condition="Exists('..\..\2017-T-488-MAPP\Projects\MovieDownload\MovieDownload.projitems')" />
+  <Import Project="..\MovieDownload\MovieDownload.projitems" Label="Shared" Condition="Exists('..\MovieDownload\MovieDownload.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

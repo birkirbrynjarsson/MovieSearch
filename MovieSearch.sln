@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieSearch.Droid", "Droid\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieSearch.iOS", "iOS\MovieSearch.iOS.csproj", "{9C1C4993-6C34-42A4-ADA9-9EC1848A00EE}"
 EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "MovieDownload", "..\2017-T-488-MAPP\Projects\MovieDownload\MovieDownload.shproj", "{8E0A00B1-D0E6-48F6-AA04-26171F002437}"
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "MovieDownload", "MovieDownload\MovieDownload.shproj", "{8E0A00B1-D0E6-48F6-AA04-26171F002437}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

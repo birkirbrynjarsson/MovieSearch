@@ -27,15 +27,19 @@ namespace MovieSearch.iOS
 
             var storageClient = new StorageClient();
             var imageDownloader = new ImageDownloader(storageClient);
-            var movieSearchController = new MovieSearchController(new MovieService(), imageDownloader);
-            var navController = new UINavigationController(movieSearchController);
-            //var tabBarController = new TabBarController()
-            //{
-            //    ViewControllers = new UIViewController[] { navController }
-            //};
 
-            //this.Window.RootViewController = new UINavigationController(tabBarController);
-            this.Window.RootViewController = new UINavigationController(movieSearchController);
+            var movieSearchController = new MovieSearchController(new MovieService(), imageDownloader);
+            var movieTopListController = new MovieTopListController(new MovieService(), imageDownloader);
+
+            var navSearchController = new UINavigationController(movieSearchController);
+            var navTopListController = new UINavigationController(movieTopListController);
+            var tabBarController = new TabBarController()
+            {
+                ViewControllers = new UIViewController[] { navSearchController, navTopListController }
+            };
+
+            this.Window.RootViewController = tabBarController;
+            //this.Window.RootViewController = new UINavigationController(movieSearchController);
             this.Window.MakeKeyAndVisible();
             return true;
         }

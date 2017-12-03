@@ -30,8 +30,10 @@ namespace MovieSearch.iOS.Controllers
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            this.View.BackgroundColor = UIColor.White;
+
             NavigationItem.Title = "Search";
+            this.View.BackgroundColor = UIColor.White;
+
 
             var searchField = UITextField();
             var searchLabel = SearchLabel();

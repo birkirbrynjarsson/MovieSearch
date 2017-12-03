@@ -13,5 +13,7 @@ namespace MovieSearch.Services
         Task<List<String>> GetCastByMovieId(int id);
         MovieDetailsViewModel GetDetailsFromListView(MovieListViewModel movie);
         Task<MovieDetailsViewModel> GetMovieById(int id);
+        Task<List<MovieListViewModel>> GetTopRatedMovies();
+        Task GetTopRatedMovies(List<MovieListViewModel> movieList);
     }
 }

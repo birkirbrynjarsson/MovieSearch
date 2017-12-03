@@ -78,11 +78,11 @@ namespace MovieSearch.iOS.Controllers
             TITLE_X = PADDING;
             TITLE_Y = Y_OFFSET + PADDING;
             TITLE_WIDTH = this.View.Bounds.Width - 2 * PADDING;
-            TITLE_HEIGHT = 24;
+            TITLE_HEIGHT = 30;
             SUBTITLE_X = PADDING;
             SUBTITLE_Y = TITLE_Y + TITLE_HEIGHT;
             SUBTITLE_WIDTH = TITLE_WIDTH;
-            SUBTITLE_HEIGHT = 24;
+            SUBTITLE_HEIGHT = 36;
             IMAGE_X = PADDING;
             IMAGE_Y = SUBTITLE_Y + SUBTITLE_HEIGHT;
             IMAGE_WIDTH = this.View.Bounds.Width * 2 / 5 - IMAGE_X;
@@ -99,7 +99,8 @@ namespace MovieSearch.iOS.Controllers
             {
                 Frame = new CGRect(TITLE_X, TITLE_Y, TITLE_WIDTH, TITLE_HEIGHT),
                 Text = _movie.Title,
-                Font = UIFont.FromName("Helvetica-Bold", 20f)
+                TextAlignment = UITextAlignment.Center,
+                Font = UIFont.FromName("BodoniSvtyTwoITCTT-Book", 26f)
             };
             return titleLabel;
         }
@@ -107,13 +108,14 @@ namespace MovieSearch.iOS.Controllers
         private UILabel MovieSubtitle()
         {
             var text = _movie.ReleaseYear.ToString() + " | ";
-            text += _movie.Runtime != 0 ? _movie.Runtime.ToString() : "";
+            text += _movie.Runtime != 0 ? _movie.Runtime.ToString() + " min" : "";
             var subtitle = new UILabel()
             {
                 Frame = new CGRect(SUBTITLE_X, SUBTITLE_Y, SUBTITLE_WIDTH, SUBTITLE_HEIGHT),
                 Text = text,
                 TextColor = UIColor.Gray,
-                Font = UIFont.FromName("Helvetica", 14f)
+                TextAlignment = UITextAlignment.Center,
+                Font = UIFont.FromName("Georgia", 16f)
             };
             return subtitle;
         }

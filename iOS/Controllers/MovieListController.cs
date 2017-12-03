@@ -26,7 +26,7 @@ namespace MovieSearch.iOS.Controllers
             base.ViewDidLoad();
             this.View.BackgroundColor = UIColor.White;
             NavigationItem.Title = "Search results";
-            this.TableView.RowHeight = 70;
+            this.TableView.RowHeight = 85;
             this.TableView.SeparatorStyle = UITableViewCellSeparatorStyle.SingleLine;
             this.TableView.Source = new MovieListDataSource(this._movies, _onSelectedMovie);
             GetMovieCast(_movies);

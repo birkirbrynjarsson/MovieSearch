@@ -137,5 +137,58 @@ namespace MovieSearch.Services
             }
             return movie;
         }
+
+        public async Task<List<MovieListViewModel>> GetTopRatedMovies()
+        {
+            ApiSearchResponse<MovieInfo> response = await _movieDbApi.GetTopRatedAsync();
+            List<MovieListViewModel> movies = new List<MovieListViewModel>();
+
+            if (response.Results == null)
+            {
+                return movies;
+            }
+
+            foreach (MovieInfo movie in response.Results)
+            {
+                movies.Add(new MovieListViewModel
+                {
+                    Id = movie.Id,
+                    Title = movie.Title,
+                    ReleaseDate = movie.ReleaseDate,
+                    ReleaseYear = movie.ReleaseDate.Year,
+                    RemoteImageUrl = movie.PosterPath,
+                    LocalImageUrl = "",
+                    Actors = new List<String>(),
+                    Rating = movie.VoteAverage
+                });
+            }
+            return movies;
+        }
+
+        public async Task GetTopRatedMovies(List<MovieListViewModel> movieList)
+        {
+            ApiSearchResponse<MovieInfo> response = await _movieDbApi.GetTopRatedAsync();
+
+            if (response.Results == null)
+            {
+                return;
+            }
+
+            foreach (MovieInfo movie in response.Results)
+            {
+                movieList.Add(new MovieListViewModel
+                {
+                    Id = movie.Id,
+                    Title = movie.Title,
+                    ReleaseDate = movie.ReleaseDate,
+                    ReleaseYear = movie.ReleaseDate.Year,
+                    RemoteImageUrl = movie.PosterPath,
+                    LocalImageUrl = "",
+                    Actors = new List<String>(),
+                    Rating = movie.VoteAverage
+                });
+            }
+            return;
+        }
     }
 }

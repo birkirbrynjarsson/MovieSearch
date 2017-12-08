@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/listItem"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp">
+    <ImageView
+        android:id="@+id/poster"
+        android:layout_width="60dp"
+        android:layout_height="90dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="Helvetica"
+        android:textSize="18dp"
+        android:id="@+id/title"
+        android:layout_toRightOf="@id/poster"
+        android:layout_marginLeft="16dp"
+        android:singleLine="true"
+        android:text="Star Wars Episode 3: The Revenge of"
+        android:maxEms="11" />
+    <TextView
+        android:text="(1926)"
+        android:layout_width="48.0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="Helvetica"
+        android:textSize="12dp"
+        android:id="@+id/releaseYear"
+        android:layout_toRightOf="@id/title"
+        android:layout_alignBaseline="@id/title"
+        android:textColor="#ff646464"
+        android:layout_marginLeft="6dp"
+        android:singleLine="true" />
+    <RatingBar
+        style="?android:attr/ratingBarStyleSmall"
+        android:layout_width="120.0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/ratingBar"
+        android:numStars="10"
+        android:layout_toRightOf="@id/poster"
+        android:layout_below="@id/title"
+        android:mirrorForRtl="true"
+        android:scaleX="1"
+        android:scaleY="1"
+        android:stepSize="0.1"
+        android:paddingTop="4dp"
+        android:layout_marginLeft="16dp"
+        android:max="10" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="Helvetica"
+        android:textSize="12dp"
+        android:id="@+id/ratingValue"
+        android:layout_toRightOf="@id/ratingBar"
+        android:textColor="#ff918c14"
+        android:layout_marginLeft="8dp"
+        android:layout_alignBottom="@id/ratingBar"
+        android:text="8.0" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="Helvetica"
+        android:textSize="11dp"
+        android:id="@+id/actors"
+        android:layout_toRightOf="@id/poster"
+        android:textColor="#ff2f2f2f"
+        android:layout_marginLeft="16dp"
+        android:layout_below="@id/ratingBar"
+        android:layout_marginTop="6dp" />
+</RelativeLayout>
